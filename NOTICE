@@ -1,0 +1,15 @@
+Sangam
+Copyright 2026 Nitin Kedia, Saurabh Agarwal, Myungjin Lee, Aditya Akella
+
+This project includes components developed by:
+
+- Fast-dLLM (https://github.com/NVlabs/Fast-dLLM)
+  Licensed under the Apache License, Version 2.0
+
+- Dream (https://huggingface.co/Dream-org/Dream-v0-Instruct-7B)
+  Licensed under the Apache License, Version 2.0
+
+- LLaDA (https://huggingface.co/GSAI-ML/LLaDA-8B-Instruct)
+  Licensed under the MIT License
+
+See the LICENSE file for details.

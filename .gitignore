@@ -1,0 +1,38 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Custom
+rough.txt
+.ruff_cache
+.pytest_cache
+benchmark_output*
+metrics_output
+results
+experiments/colocated_vs_disaggregated/out/
+capacity_search_output
+rough/
+sharegpt_v1_filtered.csv
+sharegpt_v1_unfiltered.csv
+sharegpt_v2_prompt_trace.csv
+ShareGPT_V3_unfiltered_cleaned_split.json
+capacity_search_*/
+run.sh
+.codex
+sharegpt_llada2_tokenizer_filtered_p2k_d1k.csv
+arxiv_summarization_llada2_tokenizer_filtered_4k_train.csv
+data/traces/arxiv_summarization_llada2_tokenizer_filtered_4k.csv
+
+# Paper build artifacts
+paper/tmp/
+paper_old
+paper_overleaf/
+paper.zip
+experiments/scheduler_analysis/
