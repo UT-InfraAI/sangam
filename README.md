@@ -1,5 +1,9 @@
 # Sangam
 
+[![arXiv](https://img.shields.io/badge/arXiv-2607.04206-b31b1b.svg)](https://arxiv.org/abs/2607.04206)
+[![LLaDA-8B-Instruct](https://img.shields.io/badge/🤗%20Model-LLaDA--8B--Instruct-yellow)](https://huggingface.co/GSAI-ML/LLaDA-8B-Instruct)
+[![Dream-v0-Instruct-7B](https://img.shields.io/badge/🤗%20Model-Dream--v0--Instruct--7B-yellow)](https://huggingface.co/Dream-org/Dream-v0-Instruct-7B)
+
 **Sangam** is an efficient serving system for diffusion language models (dLLMs). It systematically adapts the autoregressive (AR) LLM serving stack to dLLMs.
 
 - **Serves bidirectional dLLMs out of the box** — LLaDA-8B and Dream-7B (with Fast-dLLM style KV caching). The models are not supported by AR serving engines such as SGLang and vLLM.
