@@ -1,17 +1,18 @@
 # Sangam
 
+[![arXiv](https://img.shields.io/badge/arXiv-2607.04206-b31b1b.svg)](https://arxiv.org/abs/2607.04206)
+[![LLaDA-8B-Instruct](https://img.shields.io/badge/🤗%20Model-LLaDA--8B--Instruct-yellow)](https://huggingface.co/GSAI-ML/LLaDA-8B-Instruct)
+[![Dream-v0-Instruct-7B](https://img.shields.io/badge/🤗%20Model-Dream--v0--Instruct--7B-yellow)](https://huggingface.co/Dream-org/Dream-v0-Instruct-7B)
+
 **Sangam** is an efficient serving system for diffusion language models (dLLMs). It systematically adapts the autoregressive (AR) LLM serving stack to dLLMs.
 
 - **Serves bidirectional dLLMs out of the box** — LLaDA-8B and Dream-7B (with Fast-dLLM style KV caching). The models are not supported by AR serving engines such as SGLang and vLLM.
-- **Fast execution** — FlashInfer attention kernels and CUDA Graphs deliver raw per-token throughput comparable to SGLang.
-- **Batched serving** — sustains roughly **2.5–3× higher load than Fast-dLLM** at matched latency on LLaDA-8B and Dream-7B (ShareGPT and arXiv traces).
+- **Fast execution** — Sustains roughly **2.5–3× higher load than Fast-dLLM** at matched latency on LLaDA-8B and Dream-7B (ShareGPT and arXiv traces). FlashInfer attention kernels and CUDA Graphs deliver raw per-token throughput comparable to SGLang.
 - **Deficit token-budget scheduler** — Mitigates prefill-decode interference without chunked prefill which bidirectional attention precludes (see **(a)** below).
 - **Colocated (a), disaggregated, and hybrid (conditional disaggregation) (b) execution** under a single implementation.
     <p align="left">
     <img src="assets/architecture.png" alt="Sangam serving architecture: (a) colocated and (b) hybrid modes" width="55%">
     </p>
-
-Preprint will be out soon.
 
 ## Setup
 
@@ -83,6 +84,21 @@ uv run ruff format
 - [Capacity search (max QPS under SLA)](docs/capacity-search.md)
 - [Metrics emitted by sangam](docs/metrics.md)
 - [Generating protobuf stubs and typings](docs/protobuf.md)
+
+# Citation
+
+If you use our work, please consider citing our paper:
+```
+@misc{kedia2026sangamefficientlyservingdiffusion,
+      title={Sangam: Efficiently Serving Diffusion LLMs with the AR Stack}, 
+      author={Nitin Kedia and Saurabh Agarwal and Myungjin Lee and Aditya Akella},
+      year={2026},
+      eprint={2607.04206},
+      archivePrefix={arXiv},
+      primaryClass={cs.DC},
+      url={https://arxiv.org/abs/2607.04206}, 
+}
+```
 
 # Acknowledgement
 We used code such as PyTorch model definition files, caching and sampling from [Fast-dLLM](https://github.com/NVlabs/Fast-dLLM), and Huggingface repositories [LLaDA-8B-Instruct](https://huggingface.co/GSAI-ML/LLaDA-8B-Instruct) and [Dream-v0-Instruct-7B](https://huggingface.co/Dream-org/Dream-v0-Instruct-7B/tree/main).
